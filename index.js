@@ -1,14 +1,8 @@
-/*****************************************************************************
- * Challenge 2: Review the provided code. The provided code includes:
- * -> Statements that import data from games.js
- * -> A function that deletes all child elements from a parent element in the DOM
-*/
-
-// import the JSON data about the crowd funded games from the games.js file
+// import the JSON data about the crowd-funded games from the games.js file
 import GAMES_DATA from './games.js';
 
 // create a list of objects to store the data about the games using JSON.parse
-const GAMES_JSON = JSON.parse(GAMES_DATA)
+const GAMES_JSON = JSON.parse(GAMES_DATA);
 
 // remove all child elements from a parent element in the DOM
 function deleteChildElements(parent) {
@@ -17,38 +11,35 @@ function deleteChildElements(parent) {
     }
 }
 
-/*****************************************************************************
- * Challenge 3: Add data about each game as a card to the games-container
- * Skills used: DOM manipulation, for loops, template literals, functions
-*/
-
 // grab the element with the id games-container
 const gamesContainer = document.getElementById("games-container");
 
 // create a function that adds all data from the games array to the page
 function addGamesToPage(games) {
+    // iterate over each game in the games array
+    for (let i = 0; i < games.length; i++) {
+        const game = games[i];
 
-    // loop over each item in the data
+        // create a new div element for the game card
+        const gameCard = document.createElement("div");
+        // add the class "game-card" to the div's class list
+        gameCard.classList.add("game-card");
 
+        // set the inner HTML of the game card using template literals
+        gameCard.innerHTML = `
+            <img class="game-img" src="${game.image}" alt="${game.name}">
+            <h3>${game.name}</h3>
+            <p>Genre: ${game.genre}</p>
+            <p>Platforms: ${game.platforms.join(", ")}</p>
+        `;
 
-        // create a new div element, which will become the game card
-
-
-        // add the class game-card to the list
-
-
-        // set the inner HTML using a template literal to display some info 
-        // about each game
-        // TIP: if your images are not displaying, make sure there is space
-        // between the end of the src attribute and the end of the tag ("/>")
-
-
-        // append the game to the games-container
-
+        // append the game card to the games container
+        gamesContainer.appendChild(gameCard);
+    }
 }
 
-// call the function we just defined using the correct variable
-// later, we'll call this function using a different list of games
+// call the function with the correct variable to add all the games to the page
+addGamesToPage(GAMES_JSON);
 
 
 /*************************************************************************************
