@@ -81,3 +81,15 @@ button {
 	margin: 1%;
 	border-radius: 7px;
 }
+
+#search-container {
+	text-align: center;
+	margin-top: 20px;
+}
+
+#search-input {
+	padding: 5px 10px;
+	font-size: 16px;
+	border-radius: 5px;
+	border: none;
+}
