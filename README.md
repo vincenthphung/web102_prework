@@ -26,7 +26,7 @@ The following optional features are implemented:
 
 Here's a walkthrough of the implemented features:
 
-<img src="assets/demo.gif" alt="Video Walkthrough" width="700" />
+<img src="assets/demo.gif" alt="Video Walkthrough" width="900" />
 
 ## Notes
 
@@ -45,7 +45,7 @@ To run the Sea Monster Crowdfunding website, follow these steps:
 
 ## License
 
-```
+
 Copyright 2024 Vincent Phung
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -60,4 +60,4 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-```
+
